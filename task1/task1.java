@@ -1,0 +1,45 @@
+/** Задана натуральная степень k. 
+ * Сформировать случайным образом список коэффициентов (значения от 0 до 100) многочлена 
+ * и записать в файл многочлен степени k. */
+
+package JavaEd.task1;
+
+import java.util.Scanner;
+
+public class task1 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String result = "";
+
+        System.out.println("Введите степень многочлена: ");
+        Integer k = in.nextInt();
+
+        if (k == 0) {
+            int c = (int) (Math.random() * 101);
+            result = String.format("c = %d", c);
+            System.out.println(result);
+        } else if (k == 1) {
+            int c1 = (int) (Math.random() * 101);
+            int c2 = (int) (Math.random() * 101);
+            result = String.format("%d*x + %d = 0", c1, c2);
+            System.out.println(result);
+        } else if (k > 1) {
+            String[] coefs = new String[k];
+            for (int i = 0; i < coefs.length; i++) {
+                int c = (int) (Math.random() * 101);
+                if (c != 0) {
+                    coefs[i] = String.format("%d*x^%d", c, k - i);
+                } else {
+                    coefs[i] = "";
+                }
+            }
+            for (int i = 0; i < coefs.length; i++) {
+                result = String.join("+", result, coefs[i]);
+            }
+            result = result.substring(1) + " = 0";
+            System.out.println(result);
+        }
+
+    }
+
+}
