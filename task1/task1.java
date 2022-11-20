@@ -5,8 +5,18 @@
 package JavaEd.task1;
 
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class task1 {
+    public static void writePoly(String str) {
+        try (FileWriter writer = new FileWriter("poly.txt", false)) {
+            writer.write(str);
+            writer.flush();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String result = "";
@@ -17,12 +27,12 @@ public class task1 {
         if (k == 0) {
             int c = (int) (Math.random() * 101);
             result = String.format("c = %d", c);
-            System.out.println(result);
+            writePoly(result);
         } else if (k == 1) {
             int c1 = (int) (Math.random() * 101);
             int c2 = (int) (Math.random() * 101);
             result = String.format("%d*x + %d = 0", c1, c2);
-            System.out.println(result);
+            writePoly(result);
         } else if (k > 1) {
             String[] coefs = new String[k];
             for (int i = 0; i < coefs.length; i++) {
@@ -37,7 +47,7 @@ public class task1 {
                 result = String.join("+", result, coefs[i]);
             }
             result = result.substring(1) + " = 0";
-            System.out.println(result);
+            writePoly(result);
         }
 
     }
