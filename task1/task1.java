@@ -37,16 +37,18 @@ public class task1 {
             String[] coefs = new String[k];
             for (int i = 0; i < coefs.length; i++) {
                 int c = (int) (Math.random() * 101);
-                if (c != 0) {
+                if (c != 0 && k - i != 1) {
                     coefs[i] = String.format("%d*x^%d", c, k - i);
+                } else if (c != 0 && k - i == 1) {
+                    coefs[i] = String.format("%d*x", c);
                 } else {
                     coefs[i] = "";
                 }
-            }
-            for (int i = 0; i < coefs.length; i++) {
                 result = String.join("+", result, coefs[i]);
             }
-            result = result.substring(1) + " = 0";
+            int lCoef = (int) (Math.random() * 101);
+            String lastCoef = Integer.toString(lCoef);
+            result = result.substring(1) + "+" + lastCoef + " = 0";
             writePoly(result);
         }
 
