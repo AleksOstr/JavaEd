@@ -9,6 +9,18 @@
 
 package JavaEd.Lesson_1_Homework_1;
 
-public class Homework1 {
+import java.util.Random;
 
+public class Homework1 {
+    public static int getRandomInt() {
+        int min = -1000;
+        int max = 1000;
+        int diff = max - min;
+        int randInt = new Random().nextInt(diff + 1) + min;
+        return randInt;
+    }
+
+    public static void main(String[] args) {
+        int i = getRandomInt();
+    }
 }
