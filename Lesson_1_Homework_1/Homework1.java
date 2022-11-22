@@ -22,6 +22,9 @@ public class Homework1 {
     }
 
     public static int getHighestOneBitPosition(int number) {
+        if (number < 0) {
+            number *= -1;
+        }
         int position = 0;
         while (number != 1) {
             number >>= 1;
@@ -48,7 +51,7 @@ public class Homework1 {
 
     public static int[] getNotDivisibleByNumInRange(int rangeStart, int number) {
         String strNumbers = "";
-        for (int i = rangeStart; i > Short.MIN_VALUE; i++) {
+        for (int i = rangeStart; i > Short.MIN_VALUE; i--) {
             if (i % number != 0) {
                 strNumbers += String.format("%d ", i);
             }
@@ -63,6 +66,14 @@ public class Homework1 {
     }
 
     public static void main(String[] args) {
-
+        int i = getRandomInt();
+        System.out.println(i);
+        int n = getHighestOneBitPosition(i);
+        System.out.println(n);
+        int[] m1 = getDivisibleByNumInRange(i, n);
+        int[] m2 = getNotDivisibleByNumInRange(i, n);
+        for (int j = 0; j < m2.length; j++) {
+            System.out.println(m2[j]);
+        }
     }
 }
