@@ -67,13 +67,8 @@ public class Homework1 {
 
     public static void main(String[] args) {
         int i = getRandomInt();
-        System.out.println(i);
         int n = getHighestOneBitPosition(i);
-        System.out.println(n);
         int[] m1 = getDivisibleByNumInRange(i, n);
         int[] m2 = getNotDivisibleByNumInRange(i, n);
-        for (int j = 0; j < m2.length; j++) {
-            System.out.println(m2[j]);
-        }
     }
 }
