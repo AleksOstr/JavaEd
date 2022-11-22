@@ -34,7 +34,23 @@ public class Homework1 {
         String strNumbers = "";
         for (int i = rangeStart; i < Short.MAX_VALUE; i++) {
             if (i % number == 0){
-                strNumbers += String.format("%d ", i / number);
+                strNumbers += String.format("%d ", i);
+            }
+        }
+        strNumbers = strNumbers.trim();
+        String[] arrStrNumbers = strNumbers.split(" ");
+        int[] arrNumbers = new int[arrStrNumbers.length];
+        for (int i = 0; i < arrNumbers.length; i++) {
+            arrNumbers[i] = Integer.parseInt(arrStrNumbers[i]);
+        }
+        return arrNumbers;
+    }
+
+    public static int[] getNotDivisibleByNumInRange(int rangeStart, int number) {
+        String strNumbers = "";
+        for (int i = rangeStart; i > Short.MIN_VALUE; i++) {
+            if (i % number != 0) {
+                strNumbers += String.format("%d ", i);
             }
         }
         strNumbers = strNumbers.trim();
@@ -47,6 +63,6 @@ public class Homework1 {
     }
 
     public static void main(String[] args) {
-        System.out.println(Short.MIN_VALUE);
+
     }
 }
