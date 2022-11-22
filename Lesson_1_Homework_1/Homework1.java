@@ -30,6 +30,22 @@ public class Homework1 {
         return position;
     }
 
+    public static int[] getDivisibleByNumInRange(int rangeStart, int number) {
+        String strNumbers = "";
+        for (int i = rangeStart; i < Short.MAX_VALUE; i++) {
+            if (i % number == 0){
+                strNumbers += String.format("%d ", i / number);
+            }
+        }
+        strNumbers = strNumbers.trim();
+        String[] arrStrNumbers = strNumbers.split(" ");
+        int[] arrNumbers = new int[arrStrNumbers.length];
+        for (int i = 0; i < arrNumbers.length; i++) {
+            arrNumbers[i] = Integer.parseInt(arrStrNumbers[i]);
+        }
+        return arrNumbers;
+    }
+
     public static void main(String[] args) {
         System.out.println(Short.MIN_VALUE);
     }
