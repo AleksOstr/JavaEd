@@ -12,6 +12,7 @@ package JavaEd.Lesson_1_Homework_1;
 import java.util.Random;
 
 public class Homework1 {
+
     public static int getRandomInt() {
         int min = -1000;
         int max = 1000;
@@ -20,7 +21,16 @@ public class Homework1 {
         return randInt;
     }
 
+    public static int getHighestOneBitPosition(int number) {
+        int position = 0;
+        while (number != 1) {
+            number >>= 1;
+            position++;
+        }
+        return position;
+    }
+
     public static void main(String[] args) {
-        int i = getRandomInt();
+        System.out.println(Short.MIN_VALUE);
     }
 }
