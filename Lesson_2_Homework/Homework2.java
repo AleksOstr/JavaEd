@@ -11,10 +11,14 @@
 
 package JavaEd.Lesson_2_Homework;
 
-import java.util.Scanner;
-
 public class Homework2 {
-    public static void main(String[] args) {
 
+    public static boolean checkForContain(String str1, String str2){
+        return str1.contains(str2);
+    }
+    public static void main(String[] args) {
+        String strOne = "Hello world";
+        String strTwo = "Hello";
+        System.out.println(checkForContain(strOne, strTwo));
     }
 }
