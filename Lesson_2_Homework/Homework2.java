@@ -33,11 +33,33 @@ public class Homework2 {
         }
     }
 
+    public static String buildSum(int num1, int num2){
+        StringBuilder strBld = new StringBuilder();
+        strBld.append(String.format("%d + %d = %d", num1, num2, num1 + num2));
+        return strBld.toString();
+    }
+    public static String buildSubstraction(int num1, int num2){
+        StringBuilder strBld = new StringBuilder();
+        strBld.append(String.format("%d - %d = %d", num1, num2, num1 - num2));
+        return strBld.toString();
+    }
+    public static String buildMult(int num1, int num2){
+        StringBuilder strBld = new StringBuilder();
+        strBld.append(String.format("%d * %d = %d", num1, num2, num1 * num2));
+        return strBld.toString();
+    }
+
     public static void main(String[] args) {
         String strOne = "Hello world";
         String strTwo = "Hello";
+        int a = 3;
+        int b = 56;
+
         System.out.println(checkForContain(strOne, strTwo));
         System.out.println(checkForRotation(strOne, strTwo));
         System.out.println(recursionReverse(strOne));
+        System.out.println(buildSum(a, b));
+        System.out.println(buildSubstraction(a, b));
+        System.out.println(buildMult(a, b));
     }
 }
