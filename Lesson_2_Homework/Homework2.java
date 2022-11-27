@@ -49,6 +49,13 @@ public class Homework2 {
         return strBld.toString();
     }
 
+    public static String replaceEqualsChar(String str){
+        StringBuilder strBld = new StringBuilder(str);
+        strBld.insert(strBld.indexOf("="), "равно");
+        strBld.deleteCharAt(strBld.indexOf("="));
+        return strBld.toString();
+    }
+
     public static void main(String[] args) {
         String strOne = "Hello world";
         String strTwo = "Hello";
@@ -61,5 +68,6 @@ public class Homework2 {
         System.out.println(buildSum(a, b));
         System.out.println(buildSubstraction(a, b));
         System.out.println(buildMult(a, b));
+        System.out.println(replaceEqualsChar(buildSum(a, b)));
     }
 }
