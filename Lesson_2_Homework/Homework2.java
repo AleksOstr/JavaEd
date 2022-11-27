@@ -16,9 +16,18 @@ public class Homework2 {
     public static boolean checkForContain(String str1, String str2){
         return str1.contains(str2);
     }
+
+    public static boolean checkForRotation(String str1, String str2){
+        StringBuilder strB1 = new StringBuilder(str1);
+        StringBuilder strB2 = new StringBuilder(str2);
+        String reverseStr1 = strB1.reverse().toString();
+        String reverseStr2 = strB2.reverse().toString();
+        return (str1.contains(str2) && reverseStr1.contains(reverseStr2)) || (reverseStr1.contains(str2) && str1.contains(reverseStr2));
+    }
     public static void main(String[] args) {
         String strOne = "Hello world";
         String strTwo = "Hello";
         System.out.println(checkForContain(strOne, strTwo));
+        System.out.println(checkForRotation(strOne, strTwo));
     }
 }
