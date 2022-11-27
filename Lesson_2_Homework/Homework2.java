@@ -1,11 +1,11 @@
 /**
- 1. Напишите программу на Java, чтобы найти наименьшее окно в строке, содержащей все символы другой строки.
- 2. Напишите программу на Java, чтобы проверить, являются ли две данные строки вращением друг друга.
- 3. *Напишите программу на Java, чтобы перевернуть строку с помощью рекурсии.
- 4. Дано два числа, например 3 и 56, необходимо составить следующие строки: 3 + 56 = 59 3 – 56 = -53 3 * 56 = 168 Используем метод StringBuilder.append().
- 5. Замените символ “=” на слово “равно”. Используйте методы StringBuilder.insert(),StringBuilder.deleteCharAt().
- 6. *Замените символ “=” на слово “равно”. Используйте методы StringBuilder.replace().
- 7. **Сравнить время выполнения пунка 6 со строкой содержащей 10000 символов "=" средствами String и StringBuilder.
+ 1. РќР°РїРёС€РёС‚Рµ РїСЂРѕРіСЂР°РјРјСѓ РЅР° Java, С‡С‚РѕР±С‹ РЅР°Р№С‚Рё РЅР°РёРјРµРЅСЊС€РµРµ РѕРєРЅРѕ РІ СЃС‚СЂРѕРєРµ, СЃРѕРґРµСЂР¶Р°С‰РµР№ РІСЃРµ СЃРёРјРІРѕР»С‹ РґСЂСѓРіРѕР№ СЃС‚СЂРѕРєРё.
+ 2. РќР°РїРёС€РёС‚Рµ РїСЂРѕРіСЂР°РјРјСѓ РЅР° Java, С‡С‚РѕР±С‹ РїСЂРѕРІРµСЂРёС‚СЊ, СЏРІР»СЏСЋС‚СЃСЏ Р»Рё РґРІРµ РґР°РЅРЅС‹Рµ СЃС‚СЂРѕРєРё РІСЂР°С‰РµРЅРёРµРј РґСЂСѓРі РґСЂСѓРіР°.
+ 3. *РќР°РїРёС€РёС‚Рµ РїСЂРѕРіСЂР°РјРјСѓ РЅР° Java, С‡С‚РѕР±С‹ РїРµСЂРµРІРµСЂРЅСѓС‚СЊ СЃС‚СЂРѕРєСѓ СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРєСѓСЂСЃРёРё.
+ 4. Р”Р°РЅРѕ РґРІР° С‡РёСЃР»Р°, РЅР°РїСЂРёРјРµСЂ 3 Рё 56, РЅРµРѕР±С…РѕРґРёРјРѕ СЃРѕСЃС‚Р°РІРёС‚СЊ СЃР»РµРґСѓСЋС‰РёРµ СЃС‚СЂРѕРєРё: 3 + 56 = 59 3 вЂ“ 56 = -53 3 * 56 = 168 РСЃРїРѕР»СЊР·СѓРµРј РјРµС‚РѕРґ StringBuilder.append().
+ 5. Р—Р°РјРµРЅРёС‚Рµ СЃРёРјРІРѕР» вЂњ=вЂќ РЅР° СЃР»РѕРІРѕ вЂњСЂР°РІРЅРѕвЂќ. РСЃРїРѕР»СЊР·СѓР№С‚Рµ РјРµС‚РѕРґС‹ StringBuilder.insert(),StringBuilder.deleteCharAt().
+ 6. *Р—Р°РјРµРЅРёС‚Рµ СЃРёРјРІРѕР» вЂњ=вЂќ РЅР° СЃР»РѕРІРѕ вЂњСЂР°РІРЅРѕвЂќ. РСЃРїРѕР»СЊР·СѓР№С‚Рµ РјРµС‚РѕРґС‹ StringBuilder.replace().
+ 7. **РЎСЂР°РІРЅРёС‚СЊ РІСЂРµРјСЏ РІС‹РїРѕР»РЅРµРЅРёСЏ РїСѓРЅРєС‚Р° 6 СЃРѕ СЃС‚СЂРѕРєРѕР№ СЃРѕРґРµСЂР¶Р°С‰РµР№ 10000 СЃРёРјРІРѕР»РѕРІ "=" СЃСЂРµРґСЃС‚РІР°РјРё String Рё StringBuilder.
 */
 
 
@@ -51,14 +51,14 @@ public class Homework2 {
 
     public static String replaceEqualsChar(String str){
         StringBuilder strBld = new StringBuilder(str);
-        strBld.insert(strBld.indexOf("="), "равно");
+        strBld.insert(strBld.indexOf("="), "СЂР°РІРЅРѕ");
         strBld.deleteCharAt(strBld.indexOf("="));
         return strBld.toString();
     }
 
     public static String anotherReplaceEqualsChar(String str){
         StringBuilder strBld = new StringBuilder(str);
-        strBld.replace(strBld.indexOf("="), strBld.indexOf("=") + 1, "равно");
+        strBld.replace(strBld.indexOf("="), strBld.indexOf("=") + 1, "СЂР°РІРЅРѕ");
         return strBld.toString();
     }
 
@@ -89,12 +89,12 @@ public class Homework2 {
         }
 
         long start = System.currentTimeMillis();
-        bigStr = bigStr.replace("=", "равно");
+        bigStr = bigStr.replace("=", "СЂР°РІРЅРѕ");
         System.out.println(System.currentTimeMillis() - start);
 
         start = System.currentTimeMillis();
         for (int i = 0; i <= 10000; i++) {
-            bigStrBld.replace(bigStrBld.indexOf("="), bigStrBld.length() - 1, "равно");
+            bigStrBld.replace(bigStrBld.indexOf("="), bigStrBld.length() - 1, "СЂР°РІРЅРѕ");
         }
         System.out.println(System.currentTimeMillis() - start);
     }
