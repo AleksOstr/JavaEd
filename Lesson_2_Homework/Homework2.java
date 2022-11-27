@@ -76,29 +76,26 @@ public class Homework2 {
         System.out.println(buildMult(a, b));
         System.out.println(replaceEqualsChar(buildSum(a, b)));
         System.out.println(anotherReplaceEqualsChar(buildMult(a, b)));
+        System.out.println();
 
         String bigStr = "";
         for (int i = 0; i < 10000; i++) {
             bigStr += "=";
         }
-        System.out.println(bigStr);
 
         StringBuilder bigStrBld = new StringBuilder();
         for (int i = 0; i < 10000; i++) {
             bigStrBld.append("=");
         }
-        System.out.println(bigStrBld);
 
         long start = System.currentTimeMillis();
         bigStr = bigStr.replace("=", "равно");
-        System.out.println(bigStr);
         System.out.println(System.currentTimeMillis() - start);
 
         start = System.currentTimeMillis();
         for (int i = 0; i <= 10000; i++) {
             bigStrBld.replace(bigStrBld.indexOf("="), bigStrBld.length() - 1, "равно");
         }
-        System.out.println(bigStrBld);
         System.out.println(System.currentTimeMillis() - start);
     }
 }
