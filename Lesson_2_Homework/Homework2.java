@@ -24,10 +24,20 @@ public class Homework2 {
         String reverseStr2 = strB2.reverse().toString();
         return (str1.contains(str2) && reverseStr1.contains(reverseStr2)) || (reverseStr1.contains(str2) && str1.contains(reverseStr2));
     }
+
+    public static String recursionReverse(String str){
+        if (str.length() == 1){
+            return str;
+        } else{
+            return str.charAt(str.length() - 1) + recursionReverse(str.substring(0, str.length() - 1));
+        }
+    }
+
     public static void main(String[] args) {
         String strOne = "Hello world";
         String strTwo = "Hello";
         System.out.println(checkForContain(strOne, strTwo));
         System.out.println(checkForRotation(strOne, strTwo));
+        System.out.println(recursionReverse(strOne));
     }
 }
