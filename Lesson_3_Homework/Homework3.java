@@ -20,47 +20,58 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Homework3 {
-    static List<StringBuilder> createColorsList() {
-        List<StringBuilder> list = new ArrayList<>();
-        list.add(new StringBuilder("white"));
-        list.add(new StringBuilder("black"));
-        list.add(new StringBuilder("green"));
-        list.add(new StringBuilder("red"));
-        list.add(new StringBuilder("brown"));
+    static List<String> createColorsList() {
+        List<String> list = new ArrayList<>();
+        list.add("white");
+        list.add("black");
+        list.add("green");
+        list.add("red");
+        list.add("brown");
         return list;
     }
-    static StringBuilder addExclamationPoint(StringBuilder str) {
-        str.append("!");
+    static String addExclamationPoint(String str) {
+        str += "!";
         return str;
     }
 
-    static List<StringBuilder> addToFirstPlace(List<StringBuilder> list, StringBuilder str) {
+    static List<String> addToFirstPlace(List<String> list, String str) {
         list.add(0, str);
         return list;
     }
 
-    static StringBuilder getElementByIndex(List<StringBuilder> list, int index) {
+    static String getElementByIndex(List<String> list, int index) {
         return list.get(index);
     }
 
-    static List<StringBuilder> updateElementByIndex(List<StringBuilder> list, int index, String str) {
-        list.set(index, new StringBuilder(str));
+    static List<String> updateElementByIndex(List<String> list, int index, String str) {
+        list.set(index, str);
         return list;
     }
+
+    static void findByString(List<String> list, String str) {
+        if (list.contains(str)) {
+            System.out.println(String.format("The '%s' has index %d", str, list.indexOf(str)));
+        } else{
+            System.out.println("Nothing was found");
+        }
+    }
     public static void main(String[] args) {
-        List<StringBuilder> colorsList = createColorsList();
+        List<String> colorsList = createColorsList();
         colorsList.forEach(color -> System.out.println(color));
         System.out.println("------------");
 
-        colorsList.forEach(color -> color = addExclamationPoint(color));
+        for (int i = 0; i < colorsList.size(); i++) {
+            String str = colorsList.get(i);
+            colorsList.set(i, addExclamationPoint(str));
+        }
         colorsList.forEach(color -> System.out.println(color));
         System.out.println("------------");
 
-        colorsList = addToFirstPlace(colorsList, new StringBuilder("purple"));
+        colorsList = addToFirstPlace(colorsList, "purple");
         colorsList.forEach(color -> System.out.println(color));
         System.out.println("------------");
 
-        StringBuilder color2 = getElementByIndex(colorsList, 2);
+        String color2 = getElementByIndex(colorsList, 2);
         System.out.println(color2);
         System.out.println("------------");
 
@@ -71,5 +82,7 @@ public class Homework3 {
         colorsList.remove(2);
         colorsList.forEach(color -> System.out.println(color));
         System.out.println("------------");
+
+        findByString(colorsList, "brown!");
     }
 }
