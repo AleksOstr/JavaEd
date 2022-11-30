@@ -15,9 +15,7 @@
 
 package JavaEd.Lesson_3_Homework;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Homework3 {
     static List<String> createColorsList() {
@@ -84,5 +82,20 @@ public class Homework3 {
         System.out.println("------------");
 
         findByString(colorsList, "brown!");
+        System.out.println("------------");
+
+        List<String> colorsList2 = new ArrayList<>();
+        colorsList2.add("purple");
+        colorsList2.add("white!");
+        colorsList2.add("brown!");
+        colorsList.retainAll(colorsList2);
+        colorsList.forEach(color -> System.out.println(color));
+        System.out.println("------------");
+
+        Collections.sort(colorsList);
+        colorsList.forEach(color -> System.out.println(color));
+        System.out.println("------------");
+
+
     }
 }
