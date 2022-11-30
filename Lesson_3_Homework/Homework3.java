@@ -15,5 +15,20 @@
 
 package JavaEd.Lesson_3_Homework;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Homework3 {
+    static List<String> createColorsList() {
+        List<String> colors = new ArrayList<>();
+        colors.add("white");
+        colors.add("black");
+        colors.add("green");
+        colors.add("red");
+        colors.add("brown");
+        return colors;
+    }
+    public static void main(String[] args) {
+        List<String> colorsList = createColorsList();
+    }
 }
