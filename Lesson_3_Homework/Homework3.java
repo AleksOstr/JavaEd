@@ -16,30 +16,47 @@
 package JavaEd.Lesson_3_Homework;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Homework3 {
-    static List<String> createColorsList() {
-        List<String> colors = new ArrayList<>();
-        colors.add("white");
-        colors.add("black");
-        colors.add("green");
-        colors.add("red");
-        colors.add("brown");
-        return colors;
-    }
-    static List<String> addExclamationPoint(List<String> list) {
-        list.forEach(i -> i += "!");
+    static List<StringBuilder> createColorsList() {
+        List<StringBuilder> list = new ArrayList<>();
+        list.add(new StringBuilder("white"));
+        list.add(new StringBuilder("black"));
+        list.add(new StringBuilder("green"));
+        list.add(new StringBuilder("red"));
+        list.add(new StringBuilder("brown"));
         return list;
     }
+    static StringBuilder addExclamationPoint(StringBuilder str) {
+        str.append("!");
+        return str;
+    }
 
-    static List<String> addToFirstPlace(List<String> list, String str) {
+    static List<StringBuilder> addToFirstPlace(List<StringBuilder> list, StringBuilder str) {
         list.add(0, str);
         return list;
     }
+
+    static StringBuilder getElementByIndex(List<StringBuilder> list, int index) {
+        return list.get(index);
+    }
     public static void main(String[] args) {
-        List<String> colorsList = createColorsList();
-        colorsList = addExclamationPoint(colorsList);
-        colorsList = addToFirstPlace(colorsList, "purple");
+        List<StringBuilder> colorsList = createColorsList();
+        colorsList.forEach(color -> System.out.println(color));
+        System.out.println("------------");
+
+        colorsList.forEach(color -> color = addExclamationPoint(color));
+        colorsList.forEach(color -> System.out.println(color));
+        System.out.println("------------");
+
+        colorsList = addToFirstPlace(colorsList, new StringBuilder("purple"));
+        colorsList.forEach(color -> System.out.println(color));
+        System.out.println("------------");
+
+        StringBuilder color = getElementByIndex(colorsList, 2);
+        System.out.println(color);
+        System.out.println("------------");
     }
 }
