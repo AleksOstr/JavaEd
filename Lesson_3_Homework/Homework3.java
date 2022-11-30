@@ -15,6 +15,7 @@
 
 package JavaEd.Lesson_3_Homework;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Homework3 {
@@ -96,6 +97,18 @@ public class Homework3 {
         colorsList.forEach(color -> System.out.println(color));
         System.out.println("------------");
 
+        long start = System.currentTimeMillis();
+        List<String> arrList = new ArrayList<>();
+        for (int i = 0; i < 1000; i++) {
+            arrList = addToFirstPlace(arrList, "Hello");
+        }
+        System.out.println(System.currentTimeMillis() - start);
 
+        start = System.currentTimeMillis();
+        List<String> linList = new LinkedList<>();
+        for (int i = 0; i < 1000; i++) {
+            linList = addToFirstPlace(linList, "Hello");
+        }
+        System.out.println(System.currentTimeMillis() - start);
     }
 }
