@@ -42,6 +42,11 @@ public class Homework3 {
     static StringBuilder getElementByIndex(List<StringBuilder> list, int index) {
         return list.get(index);
     }
+
+    static List<StringBuilder> updateElementByIndex(List<StringBuilder> list, int index, String str) {
+        list.set(index, new StringBuilder(str));
+        return list;
+    }
     public static void main(String[] args) {
         List<StringBuilder> colorsList = createColorsList();
         colorsList.forEach(color -> System.out.println(color));
@@ -55,8 +60,12 @@ public class Homework3 {
         colorsList.forEach(color -> System.out.println(color));
         System.out.println("------------");
 
-        StringBuilder color = getElementByIndex(colorsList, 2);
-        System.out.println(color);
+        StringBuilder color2 = getElementByIndex(colorsList, 2);
+        System.out.println(color2);
+        System.out.println("------------");
+
+        colorsList = updateElementByIndex(colorsList, 4, "yellow");
+        colorsList.forEach(color -> System.out.println(color));
         System.out.println("------------");
     }
 }
