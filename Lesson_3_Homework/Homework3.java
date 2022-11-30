@@ -67,5 +67,9 @@ public class Homework3 {
         colorsList = updateElementByIndex(colorsList, 4, "yellow");
         colorsList.forEach(color -> System.out.println(color));
         System.out.println("------------");
+
+        colorsList.remove(2);
+        colorsList.forEach(color -> System.out.println(color));
+        System.out.println("------------");
     }
 }
