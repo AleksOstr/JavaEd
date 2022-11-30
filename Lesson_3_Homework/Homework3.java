@@ -32,8 +32,14 @@ public class Homework3 {
         list.forEach(i -> i += "!");
         return list;
     }
+
+    static List<String> addToFirstPlace(List<String> list, String str) {
+        list.add(0, str);
+        return list;
+    }
     public static void main(String[] args) {
         List<String> colorsList = createColorsList();
         colorsList = addExclamationPoint(colorsList);
+        colorsList = addToFirstPlace(colorsList, "purple");
     }
 }
