@@ -28,7 +28,12 @@ public class Homework3 {
         colors.add("brown");
         return colors;
     }
+    static List<String> addExclamationPoint(List<String> list) {
+        list.forEach(i -> i += "!");
+        return list;
+    }
     public static void main(String[] args) {
         List<String> colorsList = createColorsList();
+        colorsList = addExclamationPoint(colorsList);
     }
 }
