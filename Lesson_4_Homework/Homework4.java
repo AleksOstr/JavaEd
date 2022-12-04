@@ -25,7 +25,7 @@ public class Homework4 {
             Scanner scannerAge = new Scanner(System.in);
             Scanner scannerGender = new Scanner(System.in);
 
-            System.out.println("Enter your full name");
+            System.out.println("Enter full name");
             String name = scannerName.nextLine();
             String[] arrName = name.split(" ");
             if (arrName.length == 3){
@@ -39,6 +39,10 @@ public class Homework4 {
             } else if (arrName.length == 1) {
                 listFirstName.add(arrName[0]);
             }
+
+            System.out.println("Enter age");
+            int age = scannerAge.nextInt();
+            listAge.add(age);
 
 
         }
