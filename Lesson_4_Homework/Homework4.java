@@ -44,6 +44,11 @@ public class Homework4 {
             int age = scannerAge.nextInt();
             listAge.add(age);
 
+            System.out.println("Enter gender (M / F)");
+            String gender = scannerGender.nextLine().toLowerCase();
+            if (gender.equals("m")) {
+                listGender.add(true);
+            } else listGender.add(false);
 
         }
     }
