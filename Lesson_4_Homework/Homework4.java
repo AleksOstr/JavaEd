@@ -19,11 +19,12 @@ public class Homework4 {
         List<Integer> listAge = new ArrayList<>();
         List<Boolean> listGender = new ArrayList<>();
 
-        Boolean flag = true;
+        boolean flag = true;
         while (flag) {
             Scanner scannerName = new Scanner(System.in);
             Scanner scannerAge = new Scanner(System.in);
             Scanner scannerGender = new Scanner(System.in);
+            Scanner scannerChoice = new Scanner(System.in);
 
             System.out.println("Enter full name");
             String name = scannerName.nextLine();
@@ -50,6 +51,12 @@ public class Homework4 {
                 listGender.add(true);
             } else listGender.add(false);
 
+            System.out.println("Add another person? Y / N");
+            String choice = scannerChoice.nextLine().toLowerCase();
+            if (choice.equals("n")) {
+                flag = false;
+            }
         }
+
     }
 }
