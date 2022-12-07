@@ -12,14 +12,28 @@ package JavaEd.Lesson_5_Homework;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.TreeMap;
 
 public class Homework5 {
+    static void addColors(Map<Integer, String> map){
+        map.putIfAbsent(1, "white");
+        map.putIfAbsent(2, "black");
+        map.putIfAbsent(3, "grey");
+    }
 
     public static void main(String[] args) {
         Map<Integer, String> hMap = new HashMap<>();
-        hMap.putIfAbsent(1, "white");
-        hMap.putIfAbsent(2, "black");
-        hMap.putIfAbsent(3, "grey");
+        addColors(hMap);
         System.out.println(hMap);
+
+        hMap.forEach((k, v) -> hMap.put(k, v + "!"));
+        System.out.println(hMap);
+
+        Map<Integer, String> tMap = new TreeMap<>();
+        addColors(tMap);
+        System.out.println(tMap);
+
+        tMap.forEach((k, v) -> tMap.put(k, v + "!"));
+        System.out.println(tMap);
     }
 }
