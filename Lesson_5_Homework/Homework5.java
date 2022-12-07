@@ -9,10 +9,17 @@
 
 package JavaEd.Lesson_5_Homework;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class Homework5 {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        Map<Integer, String> hMap = new HashMap<>();
+        hMap.putIfAbsent(1, "white");
+        hMap.putIfAbsent(2, "black");
+        hMap.putIfAbsent(3, "grey");
+        System.out.println(hMap);
     }
 }
